@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四月是你的谎言</title>
+    <style>
+        /* 全局样式：去掉默认边距 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 页面整体背景（浅粉色） */
+        body {
+            background-color: rgba(255, 192, 203, 0.5);
+        }
+        /* 导航栏：固定在顶部 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            /* 半透明背景 + 模糊（毛玻璃） */
+            background: rgba(255, 180, 200, 0.3);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            /* 文字水平居中 */
+            text-align: center;
+            line-height: 60px;
+            z-index: 999; /* 保证在最上层 */
+        }
+        /* 导航里的每个按钮 */
+        .nav-item {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none; /* 去掉下划线 */
+            margin: 0 15px; /* 按钮之间间距 */
+        }
+        /* 鼠标放上去变色 */
+        .nav-item:hover {
+            color: #ff8fb6;
+        }
+        /* 视频外层盒子：全屏 */
+        .video-container {
+            width: 100%;
+            height: 100vh; /* 一屏高度 */
+            position: relative;
+            overflow: hidden;
+        }
+        /* 视频样式：铺满全屏 */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 填满不拉伸 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /* 视频中间文字：你好 友人A */
+        .video-word {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: white;
+            text-shadow: 0 0 10px black;
+        }
+        /* 每个大板块通用样式 */
+        .section {
+            width: 100%;
+            min-height: 100vh; /* 至少一屏高 */
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px; /* 顶部留出导航栏位置 */
+        }
+        /* 板块标题样式 */
+        .section h2 {
+            color: white;
+            font-size: 40px;
+            text-shadow: 2px 2px 4px black;
+            margin-bottom: 30px;
+        }
+        /* 白色半透明文字框（毛玻璃） */
+        .text-box {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            font-size: 18px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 3px black;
+            max-width: 900px;
+            margin: 0 auto; /* 居中 */
+        }
+        /* 角色卡片：简单左右布局 */
+        .char-box {
+            width: 48%;
+            float: left; /* 新手常用：左浮动并排 */
+            margin-bottom: 30px;
+        }
+        /* 角色图片 */
+        .char-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 15px;
+            float: left;
+            margin-right: 15px;
+        }
+        /* 角色名字 */
+        .char-box h3 {
+            color: white;
+            font-size: 24px;
+            text-shadow: 1px 1px 3px black;
+            margin-bottom: 10px;
+        }
+        /* 角色介绍文字 */
+        .char-box p {
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px black;
+        }
+        /* 清除浮动（必须加） */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部锚点：用于回到顶部 -->
+    <div id="top"></div>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="#top" class="nav-item">回到顶部</a>
+        <a href="#plot" class="nav-item">剧情介绍</a>
+        <a href="#character" class="nav-item">角色介绍</a>
+        <a href="#word" class="nav-item">经典语录</a>
+    </div>
+    <!-- 顶部视频区域 -->
+    <div class="video-container">
+        <video src="./网页素材/开头视频.mp4" autoplay muted loop playsinline></video>
+        <div class="video-word">你好,友人A</div>
+    </div>
+    <!-- 一、剧情介绍 -->
+    <div class="section" id="plot" style="background-image: url('./网页素材/简介照片.png')">
+        <h2>剧情介绍</h2>
+        <div class="text-box">
+            <p>有马公生曾是被誉为“人形节拍器”的钢琴神童，在母亲严苛教导下屡获大奖。11岁母亲突然离世，巨大的打击让他无法再听见琴声，从此放弃钢琴，生活陷入灰暗。</p>
+            <p>国中三年级，经青梅竹马泽部椿介绍，公生遇见了自由奔放的小提琴手宫园薰。薰耀眼不羁的演奏深深打动他，并强行拉他重回舞台担任伴奏。</p>
+            <p>薰一直隐瞒重病，用生命最后的时光照亮公生。公生后来才知道，这场相遇是她精心编织的温柔谎言。</p>
+        </div>
+    </div>
+    <!-- 二、角色介绍 -->
+    <div class="section" id="character" style="background-image: url('./网页素材/角色背景.png')">
+        <h2>角色介绍</h2>
+        <!-- 有马公生 -->
+        <div class="char-box">
+            <img src="./网页素材/有马公生.png" class="char-img">
+            <h3>有马公生</h3>
+            <p>钢琴神童，母亲去世后听不到琴声。在薰的帮助下重新拾起钢琴，走出阴影。</p>
+        </div>
+        <!-- 宫园薰 -->
+        <div class="char-box">
+            <img src="./网页素材/宫园薰.png" class="char-img">
+            <h3>宫园薰</h3>
+            <p>开朗的小提琴手，用谎言接近公生，用最后的生命照亮他的世界。</p>
+        </div>
+        <!-- 泽部椿 -->
+        <div class="char-box">
+            <img src="./网页素材/泽部椿.jpg" class="char-img">
+            <h3>泽部椿</h3>
+            <p>公生的青梅竹马，性格开朗，一直默默守护、关心公生。</p>
+        </div>
+        <!-- 渡亮太 -->
+        <div class="char-box">
+            <img src="./网页素材/渡太亮.png" class="char-img">
+            <h3>渡亮太</h3>
+            <p>公生的好朋友，性格阳光，是团队里的开心果。</p>
+        </div>
+        <div class="clear"></div> <!-- 清除浮动 -->
+    </div>
+    <!-- 三、经典语录 -->
+    <div class="section" id="word" style="background-image: url('./网页素材/语录背景.jpg')"> 
+        <h2>经典语录</h2>
+        <div class="text-box">
+            <p>-虽然喜欢了你十年，却用整个四月编了一个不爱你的谎言。</p>
+            <p>-春天马上就要来了，让我与你相遇的春天就要来了，再也没有你的春天…就要来了。</p>
+            <p>-或许前路永夜，即便如此我也要前进，因为星光即使微弱也会为我照亮前路。</p>
+            <p>-我是否住进了某人的心房呢？连鞋都没脱就住进来了呢。</p>
+            <p>-你驻足于春色之中，于那独一无二的春色之中。</p>
+        </div>
+    </div>
+</body>
+</html>
